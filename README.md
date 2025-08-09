@@ -1,5 +1,5 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   🌐 URL SHORTENER PROJECT - BY RITESH GHADGE  
+      🌐 URL SHORTENER PROJECT - BY RITESH GHADGE  
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📦 Repository Link:
