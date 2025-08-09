@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .url-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            display: none;
+        }
+        .copy-btn {
+            cursor: pointer;
+        }
+        .animate-success {
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="url-container">
+            <h1 class="text-center mb-4">URL Shortener</h1>
+            <form id="urlForm" class="mb-3">
+                <div class="mb-3">
+                    <input type="url" class="form-control form-control-lg" 
+                           id="longUrl" placeholder="Enter your long URL here" 
+                           required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Shorten URL</button>
+            </form>
+
+            <div id="resultBox" class="result-box">
+                <h5>Your shortened URL:</h5>
+                <div class="input-group">
+                    <input type="text" id="shortUrl" class="form-control" readonly>
+                    <button class="btn btn-outline-secondary copy-btn" type="button">
+                        Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('urlForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const longUrl = document.getElementById('longUrl').value;
+
+            try {
+                const response = await fetch('/url', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url: longUrl })
+                });
+
+                const data = await response.json();
+                if (data.id) {
+                    const shortUrl = `${window.location.origin}/${data.id}`;
+                    document.getElementById('shortUrl').value = shortUrl;
+                    document.getElementById('resultBox').style.display = 'block';
+                }
+            } catch (err) {
+                console.error('Error:', err);
+                alert('Error creating short URL');
+            }
+        });
+
+        document.querySelector('.copy-btn').addEventListener('click', () => {
+            const shortUrl = document.getElementById('shortUrl');
+            shortUrl.select();
+            document.execCommand('copy');
+            
+            const btn = document.querySelector('.copy-btn');
+            btn.textContent = 'Copied!';
+            btn.classList.add('btn-success');
+            
+            setTimeout(() => {
+                btn.textContent = 'Copy';
+                btn.classList.remove('btn-success');
+            }, 2000);
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
