@@ -1,58 +1,73 @@
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-      🌐 URL SHORTENER PROJECT - BY RITESH GHADGE  
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌐 URL Shortener 
+📜 Description
+A simple yet powerful URL Shortener to create, store, and manage short links with visit analytics.
+Built with Express.js, MongoDB, EJS, and Bootstrap 5.
 
-📦 Repository Link:
-   🔗 https://github.com/RiteshGhadge/URL-SHORTNER
+🔗 Repo: RiteshGhadge/URL-SHORTNER
 
-📌 Description:
-   A simple yet powerful URL Shortener built with:
-     ⚡ Express.js for backend routing
-     📂 MongoDB + Mongoose for storage
-     🎨 EJS + Bootstrap 5 for responsive UI
-     🪄 ShortID for generating unique short links
-   ➤ Create, store & manage short links with visit analytics.
+🚀 Features
+✅ Shorten any valid URL instantly
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📂 PROJECT STRUCTURE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-URL_Shortner/
- ├── views/                 🎭 EJS templates for frontend
- │    └── index.ejs
- ├── public/                🎨 Static assets (CSS, JS, Images)
- ├── Routes/                🛣 Express route definitions
- ├── controller/            🧠 Core logic & request handlers
- ├── models/                🗄 MongoDB schemas & models
- └── index.js                🚀 Application entry point
+✅ Store links in MongoDB for persistence
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⚙ MAIN FEATURES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ Shorten any valid URL instantly  
-✅ Save shortened links in MongoDB  
-✅ Track total number of clicks  
-✅ View complete visit history (timestamps)  
-✅ Beautiful & responsive Bootstrap interface  
-✅ One-click copy-to-clipboard functionality  
+✅ Track number of clicks
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🛠 HOW TO RUN LOCALLY
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1️⃣ Clone the repository:
-   git clone https://github.com/RiteshGhadge/URL-SHORTNER.git
+✅ View visit history with timestamps
 
-2️⃣ Navigate into the project folder:
-   cd URL-SHORTNER
+✅ Responsive Bootstrap-based UI
 
-3️⃣ Install dependencies:
-   npm install
+✅ One-click copy-to-clipboard
 
-4️⃣ Start the server:
-   node index.js
-   💡 Access the app at ➜ http://localhost:3000
+⚙️ Technologies Used
+Express.js – Backend Framework
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📞 CONNECT WITH ME
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💬 GitHub: https://github.com/RiteshGhadge
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MongoDB + Mongoose – Database
+
+EJS – Templating Engine
+
+Bootstrap 5 – UI Styling
+
+ShortID – Unique Link Generation
+
+📁 Project Structure
+pgsql
+Copy
+Edit
+views/        🎭 EJS templates for frontend
+public/       🎨 Static assets (CSS, JS, Images)
+Routes/       🛣 Express route definitions
+controller/   🧠 Core logic & request handlers
+models/       🗄 Mongoose schemas & models
+index.js      🚀 Application entry point
+
+📦 Setup Instructions
+1. Clone Repository
+git clone https://github.com/RiteshGhadge/URL-SHORTNER.git
+cd URL-SHORTNER
+2. Install Dependencies
+npm install
+3. Start Server
+node index.js
+Access ➜ http://localhost:3000
+
+🎨 UI Highlights
+Clean & responsive Bootstrap design
+
+Simple, intuitive interface
+
+Mobile-friendly layout
+
+🛡️ Core Functionality
+Generate short links with ShortID
+
+Store & fetch data from MongoDB
+
+Maintain click count & visit history
+
+One-click copy feature
+BlinkLink ✨
+
+👤 Author
+Ritesh Ghadge
+
+📄 License: Open-source & free to use
